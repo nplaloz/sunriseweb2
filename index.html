@@ -1,18 +1,19 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YYY - Charters con un velero</title>
+  <title>Sunrise in the sea</title>
   <style>
     /* Estilos CSS para la página */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f2f2f2;
     }
     header {
-      background-image: url('ruta/a/la/imagen/velero.jpg');
+      background-image: url('/images/PurpleSunrise2.jpg');
       background-size: cover;
       height: 400px;
       display: flex;
@@ -20,13 +21,14 @@
       align-items: center;
     }
     h1 {
-      color: white;
+      color: #a7899b;
       font-size: 60px;
       text-align: center;
       margin: 0;
+      text-shadow: 2px 2px 2px rgba(19, 19, 19, 0.5);
     }
     nav {
-      background-color: #0077be;
+      background-color: #942a6e;
       display: flex;
       justify-content: space-between;
       padding: 10px 20px;
@@ -41,20 +43,26 @@
     }
     nav a:hover {
       background-color: white;
-      color: #0077be;
+      color: #942a6e;
       transition: 0.2s;
     }
     .main {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       height: 500px;
-      background-color: #e0f3ff;
+      background-color: #fff;
       text-align: center;
     }
     .main img {
-      max-width: 100%;
-      height: auto;
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      margin: 10px;
+    }
+    .main img:hover {
+      transform: scale(1.05);
     }
     .main p {
       font-size: 24px;
@@ -62,7 +70,7 @@
       margin: 30px;
     }
     footer {
-      background-color: #333;
+      background-color: #5f0f40;
       color: white;
       display: flex;
       justify-content: center;
@@ -74,26 +82,44 @@
       text-align: center;
       margin: 0;
     }
+    /* Animación de entrada */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    /* Aplicar animación a elementos específicos */
+    .fade-in {
+      animation: fadeIn 1s;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>YYY</h1>
+    <h1>Sunrise in the sea</h1>
   </header>
   <nav>
-    <a href="#">A</a>
-    <a href="#">B</a>
-    <a href="#">C</a>
-    <a href="#">D</a>
-    <a href="#">E</a>
-    <a href="#">F</a>
+    <a href="#">Vacaciones al mar</a>
+    <a href="#">Aventuras de pesca</a>
+    <a href="#">Celebración de eventos</a>
+    <a href="#">Aventuras de buceo</a>
+    <a href="#">Translado de barcos</a>
+    <a href="#">Navegación para el aprendizaje</a>
   </nav>
-  <section class="main">
-    <img src="ruta/a/la/imagen/principal.jpg" alt="Imagen principal">
-    <p>Texto introductorio describiendo los servicios de la empresa.</p>
-  </section>
+  <div class="main fade-in">
+    <img src="images/1.jpg" alt="Imagen de la playa">
+    <img src="images/14.jpg" alt="Imagen del velero">
+    <img src="images/2.jpg" alt="Imagen de la isla">
+    <p>Es un barco de  43 pies, muy confortable y muy bien equipado con tres camarotes dobles + el del capitán, dos cuartos de baño, amplio salón, cocina con fogones y horno, enorme nevera, ducha en bañera, toldos para protegerse ante el sol, barbacoa, cargadores para los móviles…
+
+      Los huéspedes podrán disfrutar de forma gratuita al padle surf o kayak, también equipos de shorkel, la posibilidad de hacer barbacoa, luces al agua y toda clase de detalles para disfrutar una estancia fabulosa e inolvidable!
+      </p>
+  </div>
   <footer>
-    <p>YYY - Charters con un velero - Dirección, teléfono, correo electrónico y enlaces a redes sociales</p>
+    <p>Derechos reservados © 2023 Sunrise</p>
   </footer>
 </body>
 </html>
