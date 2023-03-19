@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv='cache-control' content='no-cache'> 
+  <meta http-equiv='expires' content='0'> 
+  <meta http-equiv='pragma' content='no-cache'>
+  <title>Sunrise in the sea</title>
+  <style>
+    /* Estilos CSS para la página */
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Estilos para el estado normal */
+    .button.default {
+      background-color: purple;
+    }
+
+    /* Estilos para el estado de hover */
+    .button:hover {
+      background-color: white;
+      color: purple;}
+
+    #album {
+        width: 100%;
+        height: 500px;
+        position: relative;
+    }
+
+    .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+    }
+
+    .slide:first-child {
+    opacity: 1;
+    }
+
+    .slide.active {
+    opacity: 1;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+    header {
+      background-image: url('/images/PurpleSunrise2.jpg');
+      background-size: cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      color: #994a7a;
+      font-size: 60px;
+      text-align: center;
+      margin: 0;
+      text-shadow: 2px 2px 2px rgba(19, 19, 19, 0.5);
+    }
+    nav {
+      background-color: #942a6e;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      margin-right: 10px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-align: center
+    }
+    nav a:hover {
+      background-color: white;
+      color: #942a6e;
+      transition: 0.2s;
+    }
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      background-color: #fff;
+      text-align: center;
+    }/*
+    .main img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      margin: 10px;
+    }*//*
+    .main img:hover {
+      transform: scale(1.05);
+    }*/
+    .main p {
+      font-size: 24px;
+      color: #555;
+      margin: 30px;
+      text-align: left
+    }
+    footer {
+      background-color: #5f0f40;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    }
+    footer p {
+      font-size: 18px;
+      text-align: center;
+      margin: 0;
+    }
+    /* Animación de entrada */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    /* Aplicar animación a elementos específicos */
+    .fade-in {
+      animation: fadeIn 1s;
+    }
+
+    .container {
+    width: 100%;
+    }
+
+    .text {
+    float: left;
+    width: 50%;
+    }
+
+    .album {
+    float: right;
+    width: 50%;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="barco.html">Sobre el Barco</a>
+    <a href="mar.html">Vacaciones al Mar</a>
+    <a href="pesca.html">Aventuras de Pesca</a>
+    <a href="eventos.html">Celebración de Eventos</a>
+    <a href="#">Aventuras de Buceo</a>
+    <a href="translado.html">Translado de Barcos</a>
+    <a href="aprendizaje.html">Navegación para el Aprendizaje</a>
+  </nav><!--
+  <div class="main fade-in">
+    <img src="images/1.jpg" alt="Imagen de la playa">
+    <img src="images/14.jpg" alt="Imagen del velero">
+    <img src="images/2.jpg" alt="Imagen de la isla">
+    <p>Es un barco de  43 pies, muy confortable y muy bien equipado con tres camarotes dobles + el del capitán, dos cuartos de baño, amplio salón, cocina con fogones y horno, enorme nevera, ducha en bañera, toldos para protegerse ante el sol, barbacoa, cargadores para los móviles…
+
+      Los huéspedes podrán disfrutar de forma gratuita al padle surf o kayak, también equipos de shorkel, la posibilidad de hacer barbacoa, luces al agua y toda clase de detalles para disfrutar una estancia fabulosa e inolvidable!
+      </p>
+  </div>-->
+  <div class = "main fade-in">
+  <div class="container">
+    <div class="text">
+        <p>Puedes venir a realizar navegación de aprendizaje tanto de Vela como a Motor.</p>
+        <p>El aprendizaje empezara desde el propio pantalán y después en navegación!
+            Navegación y Trimado de las velas, Navegación Nocturna, Vida a Bordo, Cocina, Liderazgo del Patrón, Seguridad, Comprobaciones… navegaremos de fondo en todos estos y mas aspectos!
+            </p>
+            <p>Pueden ser salidas de solo un día de navegación diurna por la Bahía de Valencia, Fin de Semana en Columbretes, O de una semana navegación a Ibiza y Formentera (el más completo).</p>
+            <a href="pryds.html">
+                <button class="button default">Precios y Disponibilidad</button>
+              </a>
+
+
+    </div>
+    <div class="album">
+        <div id="album">
+            <img src="imagesAprendizaje/IMG-20221025-WA0005.jpg" class="slide">
+            <img src="imagesAprendizaje/IMG-20221025-WA0014.jpg" class="slide">
+            <img src="imagesAprendizaje/IMG-20221025-WA0016.jpg" class="slide">
+            <img src="imagesAprendizaje/IMG-20221027-WA0041.jpg" class="slide">
+          </div>
+          
+    </div>
+    
+  </div>
+</div>
+  
+<footer>
+    <p>sunriseship.inbox@gmail.com</p>
+
+        <p>629947549  669050168</p>
+        <p>Es posible que estemos en navegación y sin cobertura, de modo que escríbenos al mail dejando tu nombre e intereses (plan, fechas, número de personas…), y te responderemos! 
+        </p>
+    <p>Derechos reservados © 2023 Sunrise</p>
+  </footer>
+</body>
+</html>
+<script>
+    const album = document.querySelector('#album');
+const slides = album.querySelectorAll('.slide');
+const slideInterval = 5000; // intervalo de tiempo en milisegundos
+let currentSlide = 0;
+let slideTimer;
+
+function nextSlide() {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+}
+
+function startSlideshow() {
+  slideTimer = setInterval(nextSlide, slideInterval);
+}
+
+function stopSlideshow() {
+  clearInterval(slideTimer);
+}
+
+startSlideshow();
+
+</script>
