@@ -46,6 +46,14 @@
         height: 500px;
         position: relative;
     }
+    #up{
+      height:30px;
+      width:100%;
+    }
+    #down{
+      height:30px;
+      width:100%;
+    }
 
     .slide {
     position: absolute;
@@ -58,9 +66,6 @@
     transition: opacity 1s ease-in-out;
     }
 
-    .slide:first-child {
-    opacity: 1;
-    }
 
     .slide.active {
     opacity: 1;
@@ -221,6 +226,7 @@ footer {
         
     </div>
     <div class="album">
+      <button id="up" class="button default">Siguiente</button>
         <div id="album">
             <img src="imagesMar/DSC03037.JPG" class="slide">
             <img src="imagesMar/DSC03211.JPG" class="slide">
@@ -268,6 +274,8 @@ footer {
             <img src="imagesMar/IMG_20220820_102911331.jpg" class="slide">
             <img src="imagesMar/IMG_20220820_102917230.jpg" class="slide">
           </div>
+          <button id="down" class="button default">Anterior</button>
+          <p></p>
           <a href="pryds.html">
             <button class="button default">Precios y Disponibilidad</button>
           </a>
@@ -287,26 +295,45 @@ footer {
 </body>
 </html>
 <script>
-    const album = document.querySelector('#album');
-const slides = album.querySelectorAll('.slide');
-const slideInterval = 5000; // intervalo de tiempo en milisegundos
-let currentSlide = 0;
-let slideTimer;
+  const album = document.querySelector('#album');
+  const slides = album.querySelectorAll('.slide');
+  const upB = document.querySelector('#up');
+  const downB = document.querySelector('#down');
+  const slideInterval = 5000; // intervalo de tiempo en milisegundos
+  let currentSlide = 0;
+  let slideTimer;
 
-function nextSlide() {
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add('active');
-}
+  function nextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
 
-function startSlideshow() {
-  slideTimer = setInterval(nextSlide, slideInterval);
-}
+  function prevSlide() {
+    slides[currentSlide].classList.remove('active');
+    if(currentSlide==0){currentSlide=slides.length;}
+    currentSlide = (currentSlide - 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
 
-function stopSlideshow() {
-  clearInterval(slideTimer);
-}
+  function startSlideshow() {
+    slideTimer = setInterval(nextSlide, slideInterval);
+  }
 
-startSlideshow();
+  function stopSlideshow() {
+    clearInterval(slideTimer);
+  }
+
+  upB.addEventListener('click', () => {
+    stopSlideshow();
+    nextSlide();
+  });
+
+  downB.addEventListener('click', () => {
+    stopSlideshow();
+    prevSlide();
+  })
+  slides[0].classList.add('active');
+  startSlideshow();
 
 </script>
