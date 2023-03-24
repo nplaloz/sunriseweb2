@@ -47,6 +47,15 @@
         position: relative;
     }
 
+    #up{
+      height:30px;
+      width:100%;
+    }
+    #down{
+      height:30px;
+      width:100%;
+    }
+
     .slide {
     position: absolute;
     top: 0;
@@ -56,10 +65,6 @@
     opacity: 0;
     object-fit: cover;
     transition: opacity 1s ease-in-out;
-    }
-
-    .slide:first-child {
-    opacity: 1;
     }
 
     .slide.active {
@@ -221,6 +226,7 @@ footer {
           </a>
     </div>
     <div class="album">
+      <button id="up" class="button default">Siguiente</button>
         <div id="album">
             <img src="imagesEventos/DSC02848.JPG" class="slide">
             <img src="imagesEventos/DSC02852.JPG" class="slide">
@@ -250,6 +256,7 @@ footer {
             <img src="imagesEventos/IMG_20211002_183614535.jpg" class="slide">
             <img src="imagesEventos/IMG_20220810_205211299.jpg" class="slide">
           </div>
+          <button id="down" class="button default">Anterior</button>
           
     </div>
     
@@ -267,26 +274,45 @@ footer {
 </body>
 </html>
 <script>
-    const album = document.querySelector('#album');
-const slides = album.querySelectorAll('.slide');
-const slideInterval = 5000; // intervalo de tiempo en milisegundos
-let currentSlide = 0;
-let slideTimer;
+  const album = document.querySelector('#album');
+  const slides = album.querySelectorAll('.slide');
+  const upB = document.querySelector('#up');
+  const downB = document.querySelector('#down');
+  const slideInterval = 5000; // intervalo de tiempo en milisegundos
+  let currentSlide = 0;
+  let slideTimer;
 
-function nextSlide() {
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add('active');
-}
+  function nextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
 
-function startSlideshow() {
-  slideTimer = setInterval(nextSlide, slideInterval);
-}
+  function prevSlide() {
+    slides[currentSlide].classList.remove('active');
+    if(currentSlide==0){currentSlide=slides.length;}
+    currentSlide = (currentSlide - 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
 
-function stopSlideshow() {
-  clearInterval(slideTimer);
-}
+  function startSlideshow() {
+    slideTimer = setInterval(nextSlide, slideInterval);
+  }
 
-startSlideshow();
+  function stopSlideshow() {
+    clearInterval(slideTimer);
+  }
+
+  upB.addEventListener('click', () => {
+    stopSlideshow();
+    nextSlide();
+  });
+
+  downB.addEventListener('click', () => {
+    stopSlideshow();
+    prevSlide();
+  })
+  slides[0].classList.add('active');
+  startSlideshow();
 
 </script>
