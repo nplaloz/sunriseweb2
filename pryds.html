@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DP95T8J10Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DP95T8J10Q');
+</script>
+<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv='cache-control' content='no-cache'> 
   <meta http-equiv='expires' content='0'> 
   <meta http-equiv='pragma' content='no-cache'>
   <title>Sunrise in the Sea</title>
-  <link rel="icon" type="image/x-icon" href="/images/Sunrise Con Rosa2.png">
+  <link rel="icon" type="image/x-icon" href="/images/LogoSunrise2.png">
   <style>
     /* Estilos CSS para la página */
     .button {
-      display: inline-block;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      color: white;
-      transition: background-color 0.3s ease;
-    }
+  display: inline-block;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+}
 
     /* Estilos para el estado normal */
     .button.default {
@@ -64,77 +73,102 @@
       background-color: #f2f2f2;
     }
     header {
-      background-image: url('/images/PurpleSunrise2.jpg');
-      background-size: cover;
-      height: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    h1 {
-      color: #994a7a;
-      font-size: 60px;
-      text-align: center;
-      margin: 0;
-      text-shadow: 2px 2px 2px rgba(19, 19, 19, 0.5);
-    }
-    nav {
-      background-color: #942a6e;
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 20px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 20px;
-      margin-right: 10px;
-      padding: 5px 10px;
-      border-radius: 5px;
-      text-align: center
-    }
+  background-image: url('/images/PurpleSunrise2.jpg');
+  background-size: cover;
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  color: #994a7a;
+  font-size: 50px;
+  text-align: center;
+  margin: 0;
+  text-shadow: 2px 2px 2px rgba(19, 19, 19, 0.5);
+}
+nav {
+  background-color: #942a6e;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
     nav a:hover {
       background-color: white;
       color: #942a6e;
       transition: 0.2s;
     }
     .main {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      height: 500px;
-      background-color: #fff;
-      text-align: center;
-    }/*
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: left;
+  height: auto;
+  background-color: #fff;
+  text-align: center;
+  overflow-y: auto;
+}
     .main img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-      margin: 10px;
-    }*//*
+      width: 50%;
+      object-fit:cover;
+    }/*
     .main img:hover {
       transform: scale(1.05);
     }*/
     .main p {
-      font-size: 24px;
-      color: #555;
-      margin: 30px;
-      text-align: left
-    }
-    footer {
+  font-size: 24px;
+  color: #555;
+  margin: 3vh;
+}
+footer {
       background-color: #5f0f40;
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100px;
+      min-height: 100px;
+  max-height: calc(100vh - 200px); /* ajustar este valor según sea necesario */
+  overflow-y: auto;
     }
+  tt{
+      justify-content: left;
+      align-items: left;
+  overflow-x: scroll;
+  width: 100%;
+  }
     footer p {
       font-size: 18px;
       text-align: center;
       margin: 0;
     }
+    @media (max-width: 800px) {
+  footer {
+    font-size: 14px;
+    height: auto;
+  }
+  footer p {
+    font-size: 12px;
+  }
+  .main p {
+  font-size: 15px;
+}
+.button{
+    font-size: 13px;
+}
+.main img {
+      width: 100%;
+    }
+}
     /* Animación de entrada */
     @keyframes fadeIn {
       0% {
@@ -148,28 +182,25 @@
     .fade-in {
       animation: fadeIn 1s;
     }
-
+/*
     .container {
-    width: 100%;
+    height: 100%;
     }
 
     .text {
-    float: left;
-    width: 30%;
+    height: 50%;
     }
 
     .album {
-    float: left;
-    width: 60%;
-    }
+    height: 50%;
+    }*/
 
     table {
-  border-collapse: collapse;
-}
+      border-collapse: collapse;
+    }
 
 td {
-  width: 3%;
-  height: 30px;
+  font-size: 14px;
   border: 1px solid black;
   background-color: white;
 }
@@ -202,26 +233,20 @@ td {
       </p>
   </div>-->
   <div class = "main fade-in">
-  <div class="container">
-    <div class="text">
-        <div id="album">
-            <img src="images/precios.png" class="slide">
-        </div>
-
-    </div>
-    <div class="album">
+            <img src="images/precios.png"></div>
+            <div class = "main fade-in">
       <table>
         <tr>
           <td>*</td>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
+          <td>01</td>
+          <td>02</td>
+          <td>03</td>
+          <td>04</td>
+          <td>05</td>
+          <td>06</td>
+          <td>07</td>
+          <td>08</td>
+          <td>09</td>
           <td>10</td>
           <td>11</td>
           <td>12</td>
@@ -331,11 +356,11 @@ td {
           <td class="purple"></td>
           <td class="purple"></td>
           <td class="purple"></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td class="purple"></td>
+          <td class="purple"></td>
+          <td class="purple"></td>
+          <td class="purple"></td>
+          <td class="purple"></td>
           <td class="purple"></td>
           <td></td>
           <td></td>
@@ -647,11 +672,8 @@ td {
           <td></td>
         </tr>
       </table>
-      
-          
     </div>
-    
-  </div>
+      
 </div>
   
 <footer>
