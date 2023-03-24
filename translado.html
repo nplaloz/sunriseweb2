@@ -46,6 +46,14 @@
         height: 500px;
         position: relative;
     }
+    #up{
+      height:30px;
+      width:100%;
+    }
+    #down{
+      height:30px;
+      width:100%;
+    }
 
     .slide {
     position: absolute;
@@ -56,10 +64,6 @@
     opacity: 0;
     object-fit: cover;
     transition: opacity 1s ease-in-out;
-    }
-
-    .slide:first-child {
-    opacity: 1;
     }
 
     .slide.active {
@@ -224,6 +228,7 @@ footer {
           </a>
     </div>
     <div class="album">
+      <button id="up" class="button default">Siguiente</button>
         <div id="album">
             <img src="imagesTranslado/1.jpg" class="slide">
             <img src="imagesTranslado/IMG_20210910_141814168.jpg" class="slide">
@@ -235,7 +240,7 @@ footer {
             <img src="imagesTranslado/IMG_20220430_133614811.jpg" class="slide">
             <img src="imagesTranslado/IMG_20220717_064735613.jpg" class="slide">
           </div>
-          
+          <button id="down" class="button default">Anterior</button>
     </div>
     
   </div>
@@ -252,26 +257,45 @@ footer {
 </body>
 </html>
 <script>
-    const album = document.querySelector('#album');
-const slides = album.querySelectorAll('.slide');
-const slideInterval = 5000; // intervalo de tiempo en milisegundos
-let currentSlide = 0;
-let slideTimer;
+  const album = document.querySelector('#album');
+  const slides = album.querySelectorAll('.slide');
+  const upB = document.querySelector('#up');
+  const downB = document.querySelector('#down');
+  const slideInterval = 5000; // intervalo de tiempo en milisegundos
+  let currentSlide = 0;
+  let slideTimer;
 
-function nextSlide() {
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add('active');
-}
+  function nextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
 
-function startSlideshow() {
-  slideTimer = setInterval(nextSlide, slideInterval);
-}
+  function prevSlide() {
+    slides[currentSlide].classList.remove('active');
+    if(currentSlide==0){currentSlide=slides.length;}
+    currentSlide = (currentSlide - 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
 
-function stopSlideshow() {
-  clearInterval(slideTimer);
-}
+  function startSlideshow() {
+    slideTimer = setInterval(nextSlide, slideInterval);
+  }
 
-startSlideshow();
+  function stopSlideshow() {
+    clearInterval(slideTimer);
+  }
+
+  upB.addEventListener('click', () => {
+    stopSlideshow();
+    nextSlide();
+  });
+
+  downB.addEventListener('click', () => {
+    stopSlideshow();
+    prevSlide();
+  })
+  slides[0].classList.add('active');
+  startSlideshow();
 
 </script>
